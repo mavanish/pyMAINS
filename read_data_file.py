@@ -17,7 +17,9 @@ with open('Cu-Fe.lmp', 'r') as file2:
 B2=A2[16:]
 C2=A2[:16]
 
-df2=pd.DataFrame(B2,columns=['id','type','x','y','z'],dtype=float)
+df=pd.DataFrame(B2,columns=['id','type','x','y','z'],dtype=float)
+df.id=df.id.astype(int)
+df.type=df.type.astype(int)
 
 # Do your magic here
 
@@ -30,6 +32,7 @@ df2=pd.DataFrame(B2,columns=['id','type','x','y','z'],dtype=float)
 # cc=df.avani.value_counts()
 # cc.shape[0]
 # C=C2
+
 
 with open('filename.dat', 'w') as f:
     f.write('#Data file created or converted using pyMAINS\n')
@@ -47,5 +50,5 @@ with open('filename.dat', 'w') as f:
     f.write('\n')
     f.write('Atoms\n')
     f.write('\n')
-df.to_csv('filename.dat',sep=' ',float_format=None,columns=['id','type','x','y','z'],index=False,header=False,mode='a')
+df.to_csv('filename.dat',sep='\t',float_format=None,columns=['id','type','x','y','z'],index=False,header=False,mode='a')
    
