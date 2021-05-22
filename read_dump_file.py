@@ -54,6 +54,6 @@ with open('filename.dump', 'w') as f:
     f.write('{} {}\n'.format(str(xmin),str(xmax)))
     f.write('{} {}\n'.format(str(ymin),str(ymax)))
     f.write('{} {}\n'.format(str(zmin),str(zmax)))
-    f.write('ITEM: ATOMS id type x y z vx vy vz c_2[1] c_2[2] c_2[3] c_3 c_4\n')  #Chnage the column name here           
-df.to_csv('filename.dump',sep='\t',float_format=None,columns=twin_col,index=False,header=False,mode='a')
+    f.write('ITEM: ATOMS id type x y z \n')  #Chnage the column name here           
+df.to_csv('filename.dump',sep='\t',float_format=None,index=False,header=False,mode='a')
 f.close()

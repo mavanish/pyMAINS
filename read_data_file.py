@@ -47,5 +47,5 @@ with open('filename.dat', 'w') as f:
     f.write('\n')
     f.write('Atoms\n')
     f.write('\n')
-df.to_csv('filename.dat',sep=' ',float_format=None,columns=['id','avani','x','y','z'],index=False,header=False,mode='a')
+df.to_csv('filename.dat',sep=' ',float_format=None,columns=['id','type','x','y','z'],index=False,header=False,mode='a')
    
